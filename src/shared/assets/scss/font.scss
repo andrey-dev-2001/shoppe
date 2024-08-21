@@ -1,0 +1,32 @@
+@font-face {
+  font-display: swap;
+  font-family: DMSans;
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('DMSans Regular'),
+    local('DMSans-Regular'),
+    url('@shoppe/components/shared/assets/fonts/DMSans-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: DMSans;
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local('DMSans Medium'),
+    local('DMSans-Medium'),
+    url('@shoppe/components/shared/assets/fonts/DMSans-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: DMSans;
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('DMSans Bold'),
+    local('DMSans-Bold'),
+    url('@shoppe/components/shared/assets/fonts/DMSans-Bold.woff2') format('woff2');
+}

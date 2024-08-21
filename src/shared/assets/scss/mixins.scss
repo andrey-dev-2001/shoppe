@@ -1,0 +1,79 @@
+@use 'sass:map';
+
+$breakpoints: (
+        xxs: 375px,
+        xs: 576px,
+        sm: 768px,
+        md: 1024px,
+        lg: 1420px,
+        l: 1650px,
+        xl: 1920px
+);
+
+@mixin media-breakpoint-up($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map.get($breakpoints, $breakpoint);
+
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+@mixin media-breakpoint-down($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map.get($breakpoints, $breakpoint);
+
+    @media (max-width: $breakpoint-value - 1) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+@mixin single-line-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin multi-line-truncate($line-height, $max-lines) {
+  word-break: break-word;
+  overflow: hidden;
+  line-height: $line-height;
+  max-height: $line-height * $max-lines;
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $max-lines;
+}
+
+@mixin absolute-center(){
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin theme($header-background, $skeleton-color, $background-color, $primary-text-color, $secondary-text-color, $link-color, $button-background-color, $button-text-color, $border-color, $box-shadow-color, $odd-color, $even-color) {
+  --header: #{$header-background};
+  --skeleton: #{$skeleton-color};
+  --bg: #{$background-color};
+  --primary-text: #{$primary-text-color};
+  --secondary-text: #{$secondary-text-color};
+  --link: #{$link-color};
+  --btn-bg: #{$button-background-color};
+  --btn-text: #{$button-text-color};
+  --border: #{$border-color};
+  --box-shadow: #{$box-shadow-color};
+  --odd: #{$odd-color};
+  --even: #{$even-color};
+
+  background: var(--bg);
+  color: var(--primary-text);
+  box-shadow: var(--box-shadow);
+}

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import NxWelcome from './NxWelcome.vue';
+import { BaseLogo } from "@/shared/index";
 </script>
 
 <template>
-  <NxWelcome title="shoppe" />
+  <BaseLogo></BaseLogo>
 </template>
