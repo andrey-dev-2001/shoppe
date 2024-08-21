@@ -3,6 +3,8 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import path from "path";
+import {projectRootDir} from "@nx/workspace";
+import {appRootPath} from "nx/src/utils/app-root";
 
 export default defineConfig({
   root: __dirname,
@@ -27,7 +29,7 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src/'),
+      '@': path.resolve(appRootPath, './src/'),
     },
   },
 

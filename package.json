@@ -9,7 +9,8 @@
   },
   "private": true,
   "dependencies": {
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "vue-router": "^4.4.3"
   },
   "devDependencies": {
     "@nx/devkit": "19.6.1",

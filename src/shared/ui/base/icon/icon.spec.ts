@@ -1,9 +1,9 @@
 import { mount } from '@vue/test-utils';
-import BaseButton from './BaseButton.vue';
+import BaseIcon from "./BaseIcon.vue";
 
-describe('BaseButton', () => {
+describe('BaseIcon', () => {
   it('renders properly', () => {
-    const wrapper = mount(BaseButton, {});
+    const wrapper = mount(BaseIcon, {});
     expect(wrapper.text()).toContain('Welcome to Button');
   });
 });
