@@ -6,13 +6,26 @@
   background: $white;
   top: 0;
 
+  .dropdown{
+    display: none;
+  }
+
   &__border-bottom{
     .header__inner{
       border-bottom: 1px solid $light-gray;
     }
 
     .header__nav-item{
+
+      &:hover{
+        .dropdown{
+          display: flex;
+        }
+      }
+
+      > .router-link-active{
         &:after{
+          pointer-events: none;
           content: "";
           display: block;
           position: absolute;
@@ -22,8 +35,9 @@
           height: 2px;
           background: $black;
           transition: background 0.3s ease;
-
+        }
       }
+
     }
   }
 
@@ -46,6 +60,19 @@
       padding-bottom: 17px;
       padding-top: 17px;
       position: relative;
+
+      &:before{
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: $black;
+        opacity: 0;
+        transition: background 0.3s ease;
+      }
     }
 
     &-links{
@@ -55,10 +82,6 @@
       gap: 64px;
       height: 100%;
 
-    }
-
-    &-link{
-      position: relative;
     }
 
     &-line{

@@ -1,17 +1,14 @@
 <template>
-
-  <TheHeader borderBottom></TheHeader>
+  <TheHeader :borderBottom="!isHomePage" />
   <router-view />
 </template>
 
 <script setup lang="ts">
 import { TheHeader } from "@/widgets";
-import {useRoute} from "vue-router";
-import {AppPages, AppRoutes, EAppProviders} from "@/app/providers";
-import {provide} from "vue";
+import { useRoute } from 'vue-router';
+import { computed } from 'vue';
 
-provide(EAppProviders.AppRoutes, AppRoutes)
-provide(EAppProviders.AppPages, AppPages)
+const route = useRoute();
 
-const route = useRoute()
+const isHomePage = computed(() => route.meta.headerBorder === false);
 </script>
