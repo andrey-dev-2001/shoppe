@@ -6,7 +6,7 @@
 import { computed } from 'vue'
 
 interface Props {
-  icon: string
+  icon: Object
 }
 
 const props = withDefaults(defineProps<Props>(), {})

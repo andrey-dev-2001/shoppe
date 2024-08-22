@@ -1,13 +1,14 @@
 import type { RouteRecordRaw } from 'vue-router'
 
-export const routeName: string = 'home'
+export const routeName: string = '/'
 
 export const route: RouteRecordRaw = {
     name: routeName,
-    path: '/',
+    path: '/' +
+        '',
     component: () => import('@/pages/home/ui/HomePage.vue'),
     meta: {
         title: 'Home',
-        headerBorder: false
-    },
+        layout: 'DefaultLayout',
+    }
 }

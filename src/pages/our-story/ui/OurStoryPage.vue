@@ -1,5 +1,5 @@
 <template>
   <div>
-    404
+    Out Story
   </div>
 </template>

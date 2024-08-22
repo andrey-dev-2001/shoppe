@@ -8,13 +8,15 @@
             <li
                 v-for="(link, index) in navLinks"
                 :key="index"
-                class="header__nav-item">
+                class="header__nav-item"
+            >
               <BaseButton
                   class="header__nav-link"
                   tag="RouterLink"
                   :to="link.to">
                 {{ link.text }}
               </BaseButton>
+              <BaseDropDown/>
             </li>
           </ul>
 
@@ -53,6 +55,7 @@
 
 <script setup lang="ts">
 import {BaseButton, BaseIcon, BaseLogo, SearchIcon, CartIcon, UserIcon} from "@/shared";
+import BaseDropDown from "@/shared/ui/base/dropdown/BaseDropDown.vue";
 
 interface NavLink {
   text: string;
@@ -61,7 +64,7 @@ interface NavLink {
 
 interface NavButton {
   icon: typeof SearchIcon | typeof CartIcon | typeof UserIcon;
-  tag: string;
+  tag: 'button' | 'a' | 'RouterLink';
   to?: string;
   ariaLabel: string;
 }
@@ -80,8 +83,8 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const navLinks: NavLink[] = [
-  { text: "Shop", to: "/shop" },
-  { text: "Blog", to: "/blog" },
+  { text: "Shop", to: "shop" },
+  { text: "Blog", to: "blog" },
   { text: "Our Story", to: "/our-story" },
 ];
 
