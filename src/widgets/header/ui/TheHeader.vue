@@ -35,7 +35,9 @@
               <BaseIcon :icon="button.icon"/>
             </BaseButton>
             <BaseButton class="header__burger-button" :class="{ 'open': isMenuOpen }" tag="button" aria-label="Burger Menu Button" @click="toggleMenu">
+              <div class="header__burger-button-inner">
               <span></span>
+              </div>
             </BaseButton>
           </div>
         </nav>
