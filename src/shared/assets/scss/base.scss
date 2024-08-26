@@ -1,13 +1,13 @@
 @import "mixins";
+@import "variables";
 
 .body{
   height: 3000px;
-  background: #D8D8D8;
   font-family: 'DM Sans';
 }
 
 .container {
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 16px;
   max-width: 1248px;
 }

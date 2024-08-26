@@ -1,0 +1,14 @@
+@import "@/shared/assets/scss/variables";
+@import "@/shared/assets/scss/mixins";
+
+.base-logo{
+  @include media-breakpoint-up(sm){
+    max-width: 158px;
+    max-height: 40px;
+  }
+
+  @include media-breakpoint-down(sm){
+    max-width: 90px;
+    max-height: 36px;
+  }
+}
