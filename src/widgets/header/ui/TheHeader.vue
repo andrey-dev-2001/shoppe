@@ -1,5 +1,6 @@
 <template>
   <header class="header" :class="{'header__border-bottom': borderBottom}">
+    <div class="header__desktop">
     <div class="container">
       <div class="header__inner">
         <BaseLogo class="header__logo"></BaseLogo>
@@ -38,34 +39,36 @@
             </BaseButton>
           </div>
         </nav>
+      </div>
+    </div>
+    </div>
+    <div class="header__burger-menu" :class="{ 'open': isMenuOpen }" tabindex="-1">
+      <div class="container">
+        <div class="header__burger-menu-inner">
+          <BaseSearch/>
+          <div class="header__burger-menu-links">
+            <BaseButton
+                v-for="(button, index) in burgerMenuLinks"
+                :key="index"
+                class="header__burger-menu-button"
+                tag="RouterLink"
+                :to="button.to"
+                @click="closeMenu()">
+              {{ button.text }}
+            </BaseButton>
+          </div>
 
-        <div class="header__burger-menu" :class="{ 'open': isMenuOpen }">
-          <div class="container">
-            <div class="header__burger-menu-inner">
-              <BaseSearch/>
-              <div class="header__burger-menu-links">
-                <BaseButton
-                    v-for="(button, index) in burgerMenuLinks"
-                    :key="index"
-                    class="header__burger-menu-button"
-                    tag="RouterLink"
-                    :to="button.to">
-                  {{ button.text }}
-                </BaseButton>
-              </div>
-
-              <div class="header__burger-menu-buttons">
-                <BaseButton
-                    v-for="(button, index) in burgerMenuButtons"
-                    :key="index"
-                    class="header__burger-menu-button"
-                    tag="RouterLink"
-                    :to="button.to"
-                    :icon="button.icon">
-                  {{ button.text }}
-                </BaseButton>
-              </div>
-            </div>
+          <div class="header__burger-menu-buttons">
+            <BaseButton
+                v-for="(button, index) in burgerMenuButtons"
+                :key="index"
+                class="header__burger-menu-button"
+                tag="RouterLink"
+                :to="button.to"
+                @click="closeMenu()"
+                :icon="button.icon">
+              {{ button.text }}
+            </BaseButton>
           </div>
         </div>
       </div>
@@ -113,9 +116,19 @@ const props = withDefaults(defineProps<Props>(), {
 
 const isMenuOpen = ref(false);
 
-const toggleMenu = () => {
+function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value;
-};
+  if (isMenuOpen.value) {
+    document.body.classList.add('no-scroll');
+  } else {
+    document.body.classList.remove('no-scroll');
+  }
+}
+
+function closeMenu() {
+  isMenuOpen.value = false;
+  document.body.classList.remove('no-scroll');
+}
 
 const navLinks: NavLink[] = [
   { text: "Shop", to: "shop" },
