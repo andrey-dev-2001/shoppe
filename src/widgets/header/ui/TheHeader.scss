@@ -1,15 +1,73 @@
 @import "@/shared/assets/scss/variables";
+@import "@/shared/assets/scss/mixins";
 
 .header{
-  margin-top: 64px;
   position: sticky;
   background: $white;
   top: 0;
+
+  @include media-breakpoint-up(sm){
+    margin-top: 64px;
+  }
+
+  @include media-breakpoint-down(sm){
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  &__burger-button{
+    @include media-breakpoint-up(sm){
+      display: none;
+    }
+
+    @include media-breakpoint-down(sm){
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background: none;
+      border: none;
+      position: relative;
+      padding: 0;
+
+      &::before,
+      &::after,
+      span{
+        content: "";
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: #333;
+        transition: all 0.3s ease;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,0);
+      }
+
+      &:before{
+        top: 14px;
+      }
+
+      .span{
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:after{
+        bottom: 14px;
+        width: 14px;
+        left: 24px;
+      }
+    }
+  }
 
   .dropdown{
     display: none;
   }
 
+  @include media-breakpoint-up(sm){
   &__border-bottom{
     .header__inner{
       border-bottom: 1px solid $light-gray;
@@ -39,6 +97,7 @@
       }
 
     }
+  }
   }
 
   &__inner{
@@ -76,36 +135,118 @@
     }
 
     &-links{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 64px;
-      height: 100%;
 
+      @include media-breakpoint-up(sm){
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 64px;
+        height: 100%;
+      }
+
+      @include media-breakpoint-down(sm){
+        display: none;
+      }
     }
 
     &-line{
-      height: 17px;
-      width: 1px;
-      margin-left: 48px;
-      margin-right: 48px;
-      background: $dark-gray;
+      @include media-breakpoint-up(sm){
+        height: 17px;
+        width: 1px;
+        margin-left: 48px;
+        margin-right: 48px;
+        background: $dark-gray;
+      }
+
+      @include media-breakpoint-down(sm){
+        display: none;
+      }
     }
 
     &-buttons{
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 39px;
+
+      @include media-breakpoint-up(sm){
+        gap: 39px;
+      }
+
+      @include media-breakpoint-down(sm){
+        gap: 3px;
+      }
     }
 
     &-button{
-      max-width: 20px;
-      max-height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include media-breakpoint-up(sm){
+        max-width: 20px;
+        max-height: 20px;
+      }
+
+      @include media-breakpoint-down(sm){
+        width: 44px;
+        height: 44px;
+
+        .base-icon{
+          max-width: 20px;
+          max-height: 20px;
+        }
+
+        &.header__search-button, &.header__user-button{
+          display: none;
+        }
+      }
     }
   }
 
   &__burger-menu{
-    display: none;
+    @include media-breakpoint-up(sm){
+      display: none;
+    }
+
+    @include media-breakpoint-down(sm){
+      display: none;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      transform: translate(-100%, 100%);
+      background: $white;
+
+      &.open{
+        transform: translate(0%, 100%);
+        display: block;
+      }
+
+      &-inner{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      &-links{
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      &-buttons{
+        padding-top: 15px;
+        border-top: 1px solid $light-gray;
+        gap: 5px;
+      }
+
+      &-button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        height: 44px;
+      }
+    }
   }
 }
