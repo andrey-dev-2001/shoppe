@@ -1,9 +1,33 @@
 @import "mixins";
 @import "variables";
 
-.body{
-  height: 3000px;
+body{
   font-family: 'DM Sans';
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    background: #F8F8F8;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background: #C0A57E;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #B0956D;
+  }
+
+  @include media-breakpoint-down(sm){
+    &.no-scroll{
+      overflow: hidden;
+    }
+  }
 }
 
 .container {
