@@ -2,16 +2,17 @@
 @import "@/shared/assets/scss/mixins";
 
 .header{
+  background: $white;
   position: sticky;
   top: 0;
   z-index: 10;
 
+  @include media-breakpoint-up(sm){
+    margin-top: 64px;
+  }
+
   &__desktop{
     background: $white;
-
-    @include media-breakpoint-up(sm){
-      margin-top: 64px;
-    }
 
     @include media-breakpoint-down(sm){
       padding-top: 4px;

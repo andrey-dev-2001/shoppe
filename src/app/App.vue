@@ -1,10 +1,11 @@
 <template>
   <TheHeader :borderBottom="!isHomePage" />
-  <router-view />
+  <router-view class="page" />
+  <TheFooter />
 </template>
 
 <script setup lang="ts">
-import { TheHeader } from "@/widgets";
+import {TheFooter, TheHeader} from "@/widgets";
 import { useRoute } from 'vue-router';
 import { computed } from 'vue';
 

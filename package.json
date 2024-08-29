@@ -9,8 +9,11 @@
   },
   "private": true,
   "dependencies": {
+    "vee-validate": "^4.13.2",
+    "vite-plugin-checker": "^0.7.2",
     "vue": "^3.3.4",
-    "vue-router": "^4.4.3"
+    "vue-router": "^4.4.3",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@nx/devkit": "19.6.1",

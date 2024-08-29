@@ -1,0 +1,36 @@
+@import "@/shared/assets/scss/mixins";
+@import "@/shared/assets/scss/variables";
+
+.base-field{
+  &__inner{
+    border-bottom: 1px solid $light-gray;
+    transition: border-color 0.3s ease-in-out;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    &:focus-within{
+      border-color: $black;
+    }
+  }
+
+  &__field{
+    flex: 100%;
+  }
+
+  &__button{
+    flex: 100%;
+    max-width: fit-content;
+  }
+
+  &__error{
+    margin-top: 8px;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 10px;
+    text-transform: capitalize;
+    color: $light-red;
+  }
+}
