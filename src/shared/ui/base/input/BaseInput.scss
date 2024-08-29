@@ -1,0 +1,16 @@
+@import "@/shared/assets/scss/mixins";
+@import "@/shared/assets/scss/variables";
+
+.base-input{
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: $dark-gray;
+  border: 0;
+  outline: none;
+  flex: 100%;
+
+  &:focus, &:active{
+    color: $black;
+  }
+}
