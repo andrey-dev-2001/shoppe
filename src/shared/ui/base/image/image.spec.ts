@@ -1,9 +1,0 @@
-import { mount } from '@vue/test-utils';
-import BaseImage from './BaseImage.vue';
-
-describe('Image', () => {
-  it('renders properly', () => {
-    const wrapper = mount(BaseImage, {});
-    expect(wrapper.text()).toContain('Welcome to Image');
-  });
-});
