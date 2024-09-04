@@ -1,0 +1,63 @@
+@import "@/shared/assets/scss/variables";
+@import "@/shared/assets/scss/mixins";
+
+.privacy-policy{
+  @include media-breakpoint-up(sm){
+    padding-top: 125px;
+    padding-bottom: 250px;
+  }
+
+  @include media-breakpoint-down(sm){
+    padding-top: 77px;
+    padding-bottom: 96px;
+  }
+
+  &__inner{
+    max-width: 671px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__title{
+    margin-bottom: 39px;
+  }
+  &__security{
+    @include media-breakpoint-up(sm){
+      margin-top: 42px;
+    }
+
+    @include media-breakpoint-down(sm){
+      margin-top: 22px;
+    }
+
+    .page__section-title{
+      @include media-breakpoint-up(sm){
+        margin-bottom: 24px;
+      }
+
+      @include media-breakpoint-down(sm){
+        margin-bottom: 13px;
+      }
+    }
+  }
+
+  &__cookies{
+    @include media-breakpoint-up(sm){
+      margin-top: 39px;
+    }
+
+    @include media-breakpoint-down(sm){
+      margin-top: 22px;
+    }
+
+    .page__section-title{
+      @include media-breakpoint-up(sm){
+        margin-bottom: 24px;
+      }
+
+      @include media-breakpoint-down(sm){
+        margin-bottom: 13px;
+      }
+    }
+  }
+}

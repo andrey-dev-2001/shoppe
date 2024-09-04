@@ -5,6 +5,10 @@ import { route as redirectRoute } from  './redirect'
 import { route as catalogRoute } from './shop'
 import { route as blogRoute } from './blog'
 import { route as ourStoryRoute } from  './our-story'
+import { route as authRoute } from './auth'
+import { route as contactUsRoute } from './contact-us'
+import { route as forgotPasswordRoute } from './forgotPassword'
+import { route as privacyPolicyRoute } from './privacy-policy'
 
 const rawRoutes: RouteRecordRaw[] = [
   homeRoute,
@@ -12,7 +16,11 @@ const rawRoutes: RouteRecordRaw[] = [
   redirectRoute,
   catalogRoute,
   blogRoute,
-  ourStoryRoute
+  ourStoryRoute,
+  authRoute,
+  contactUsRoute,
+  forgotPasswordRoute,
+  privacyPolicyRoute,
 ]
 
 const routes: RouteRecordRaw[] = rawRoutes.map((route) => ({

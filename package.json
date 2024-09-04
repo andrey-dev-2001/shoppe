@@ -5,10 +5,12 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "api-generate": "npx @openapitools/openapi-generator-cli generate -i ./src/shared/api/swagger.json -o ./src/shared/api/gen -g typescript-axios --additional-properties=supportsES6=true,useSingleRequestParameter=true"
   },
   "private": true,
   "dependencies": {
+    "@vee-validate/yup": "^4.13.2",
     "vee-validate": "^4.13.2",
     "vite-plugin-checker": "^0.7.2",
     "vue": "^3.3.4",
@@ -44,6 +46,7 @@
     "jsdom": "~22.1.0",
     "nx": "19.6.1",
     "prettier": "^2.6.2",
+    "rollup-plugin-visualizer": "^5.12.0",
     "sass": "1.62.1",
     "typescript": "~5.5.2",
     "vite": "^5.0.0",

@@ -1,0 +1,22 @@
+@import "@/shared/assets/scss/variables";
+
+.sign-up{
+  display: flex;
+  flex-direction: column;
+
+  &__submit{
+    margin-top: 69px;
+    background: $black;
+    padding: 16px;
+    color: $white;
+    border-radius: 4px;
+  }
+
+  &__email{
+    margin-top: 126px;
+  }
+
+  &__password, &__confirm-password{
+    margin-top: 46px;
+  }
+}

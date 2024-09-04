@@ -1,0 +1,24 @@
+@import "@/shared/assets/scss/variables";
+
+.base-tabs{
+  border-radius: 8px;
+  background: $light-gray;
+  padding: 5px;
+  display: flex;
+  gap: 18px;
+
+  &__tab{
+    padding: 12px;
+    flex: 100%;
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    color: $black;
+  }
+
+  .router-link-active{
+    border-radius: 8px;
+    background: $white;
+  }
+}

@@ -33,7 +33,7 @@ interface Props {
   href?: string | null
   to?: RouteLocationRaw | null
   type?: 'button' | 'submit'
-  icon?: string
+  icon?: string | object | Array<string | object>;
   active?: boolean
   textTransform?: 'none' | 'uppercase'
   justifyContent?: 'center' | 'start' | 'end'

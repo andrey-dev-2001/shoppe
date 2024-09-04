@@ -1,0 +1,60 @@
+@import "@/shared/assets/scss/variables";
+
+.base-checkbox {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &:focus-within .base-checkbox__label {
+    color: $black;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover + .base-checkbox__label {
+      color: $black;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  &__custom {
+    pointer-events: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid $light-gray;
+    border-radius: 2px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s, background-color 0.2s;
+
+    .base-checkbox__input:checked + & {
+      background-color: $black;
+      border-color: $black;
+    }
+  }
+
+  &__label {
+    margin-left: 12px;
+    font-size: 14px;
+    color: $dark-gray;
+    cursor: pointer;
+    transition: color 0.2s;
+    user-select: none;
+
+    &:hover{
+      color: $black;
+    }
+  }
+}

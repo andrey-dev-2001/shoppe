@@ -1,0 +1,18 @@
+@import "@/shared/assets/scss/variables";
+
+.textarea {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: $dark-gray;
+  border: none;
+  padding: 8px;
+  width: 100%;
+  outline: none;
+  resize: none;
+  height: 71px;
+
+  &:focus {
+
+  }
+}

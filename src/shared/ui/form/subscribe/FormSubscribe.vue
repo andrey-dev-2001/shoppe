@@ -1,48 +1,41 @@
-<template>
-  <DynamicForm :fields="fields"/>
-</template>
+<script setup>
+import { ref } from 'vue';
+import { useForm } from 'vee-validate';
+import * as yup from 'yup';
+import BaseInput from "@/shared/ui/base/input/BaseInput.vue";
+import {BaseButton} from "@/shared";
+import ArrowIcon from "@/shared/assets/icons/ArrowIcon.vue";
+import BaseField from "@/shared/ui/base/field/BaseField.vue";
 
-<script setup lang="ts">
-import * as Yup from 'yup';
-import DynamicForm from "@/shared/ui/form/dynamic-form/DynamicForm.vue";
+const hasSubmitted = ref(false);
 
+const { errors, handleSubmit, defineField } = useForm({
+  validationSchema: yup.object({
+    email: yup.string().email('Неправильний формат email').required('Email обов\'язковий'),
+  }),
+});
 
-const  fields = [
-    {
-      label: 'Your Name',
-      name: 'name',
-      as: 'input',
-      rules: Yup.string().required(),
-    },
-    {
-      label: 'Your Email',
-      name: 'email',
-      as: 'input',
-      rules: Yup.string().email().required(),
-    },
-    {
-      label: 'Your Password',
-      name: 'password',
-      as: 'input',
-      type: 'password',
-      rules: Yup.string().min(6).required(),
-    },
-  ]
+const onSubmit = handleSubmit(values => {
+  alert(JSON.stringify(values, null, 2));
+});
+
+const [email, emailAttrs] = defineField('email');
 </script>
 
-<style scoped>
-.error-message {
-  color: red;
-  font-size: 0.875rem;
-}
+<template>
+  <form @submit="onSubmit">
+  <BaseField>
+    <template #input>
+      <BaseInput name="email" autocomplete="email" v-model="email" v-bind="emailAttrs" placeholder="Give an email, get the newsletter." />
+    </template>
 
-.form-input {
-  border: 1px solid #ccc;
-  padding: 0.5rem;
-  border-radius: 4px;
-}
+    <template #button>
+      <BaseButton tag="button" type="submit" @click="hasSubmitted = true" :icon="ArrowIcon"/>
+    </template>
 
-.form-input.is-invalid {
-  border-color: red;
-}
-</style>
+    <template v-if="hasSubmitted" #error>
+      {{ errors.email }}
+    </template>
+  </BaseField>
+  </form>
+</template>

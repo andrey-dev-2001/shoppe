@@ -81,7 +81,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import {BaseButton, BaseIcon, BaseLogo, SearchIcon, CartIcon, UserIcon, BaseSearch, ExitIcon} from "@/shared";
-import BaseDropDown from "@/shared/ui/base/dropdown/BaseDropDown.vue";
+import BaseDropDown from "@/shared/ui/base/sssssdropdown/BaseDropDown.vue";
+import {router} from "@/app/providers";
 
 interface NavLink {
   text: string;
@@ -141,7 +142,7 @@ const navLinks: NavLink[] = [
 const navButtons: NavButton[] = [
   { class: 'header__search-button', icon: SearchIcon, tag: 'button', ariaLabel: 'Search' },
   { class: 'header__cart-button', icon: CartIcon, tag: 'RouterLink', to: '/cart', ariaLabel: 'Cart' },
-  { class: 'header__user-button', icon: UserIcon, tag: 'RouterLink', to: '/cabinet', ariaLabel: 'Cabinet' },
+  { class: 'header__user-button', icon: UserIcon, tag: 'RouterLink', to: { name: 'sign-in' }, ariaLabel: 'Cabinet' },
 ];
 
 const burgerMenuLinks: BurgerMenuLinks[] = [
@@ -155,7 +156,7 @@ const burgerMenuLinks: BurgerMenuLinks[] = [
 ];
 
 const burgerMenuButtons: BurgerMenuButton[] = [
-  { text: "My account", to: "/cabinet", icon: UserIcon },
+  { text: "My account", to: { name: 'auth' }, icon: UserIcon },
   { text: "Logout", to: "/logout", icon: ExitIcon },
 ]
 </script>

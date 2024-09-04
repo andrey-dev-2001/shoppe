@@ -1,104 +1,44 @@
 <template>
-  <div class="dropdown">
-    <ul class="dropdown__list">
-      <li
-          class="dropdown__item"
-          v-for="(item, index) in dropdownItems"
-          :key="index"
-      >
-        <BaseButton
-            class="dropdown__item-link"
-            tag="RouterLink"
-            :to="item.to"
-        >
-          {{ item.text }}
-        </BaseButton>
-        <ul class="dropdown__sub-list">
-          <li class="dropdown__sub-item" v-for="(subItem, index) in item.linksList"
-              :key="index">
-            <BaseButton
-                class="dropdown__sub-item-link"
-                tag="RouterLink"
-                :to="subItem.to"
-            >
-              {{ subItem.text }}
-            </BaseButton>
-            <ul class="dropdown__sub-list" v-if="subItem.sublinksList">
-              <li class="dropdown__sub-item" v-for="(button, index) in subItem.sublinksList"
-                  :key="index">
-                <BaseButton
-                    class="dropdown__sub-item-link"
-                    tag="RouterLink"
-                    :to="button.to"
-                >
-                  {{ button.text }}
-                </BaseButton>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
+  <div
+      class="dropdown"
+      :id="id"
+      :tabindex="0"
+      @blur="handleBlur"
+      :class="{ open: isOpen, dropdown_transparent: isTransparent, dropdown_absolute: isAbsolute }"
+  >
+    <div class="dropdown__selected-option" @click="toggleDropdown">
+      <slot name="selected"></slot>
+
+      <span class="dropdown__arrow">
+        <DropDownArrowIcon class="dropdown__arrow-icon" />
+      </span>
+    </div>
+
+    <ul class="dropdown__options-list">
+      <slot class="dropdown__options-list" name="options" v-if="isOpen"> </slot>
     </ul>
   </div>
 </template>
-<script setup lang="ts">
-import {BaseButton} from "@/shared";
 
-const dropdownItems = [
-  { text: "SHOP TYPES", to: "/", linksList: [
-      { text: "Shop full width", to: "/" },
-      { text: "Shop With sidebar", to: "/" },
-      { text: "Shop category", to: "/" },
-      { text: "Shop carousel", to: "/" },
-      { text: "Masonry grid", to: "/" },
-    ] },
-  { text: "SINGLE PRODUCT", to: "/", linksList: [
-      { text: "Standard product", to: "/" },
-      { text: "Variable product", to: "/" },
-      { text: "On sale product", to: "/" },
-      { text: "Out of stock product", to: "/" },
-      { text: "New! Product", to: "/" },
-    ] },
-  { text: "SHOP PAGES", to: "/", linksList: [
-      { text: "Cart", to: "/", sublinksList: [
-          { text: "Cart", to: "/" },
-          { text: "Checkout", to: "/" },
-          { text: "My account", to: "/" },
-          { text: "Wishlist", to: "/" },
-          { text: "Order tracking", to: "/" },
-        ] },
-      { text: "Checkout", to: "/", sublinksList: [
-          { text: "Cart", to: "/" },
-          { text: "Checkout", to: "/" },
-          { text: "My account", to: "/" },
-          { text: "Wishlist", to: "/" },
-          { text: "Order tracking", to: "/" },
-        ] },
-      { text: "My account", to: "/", sublinksList: [
-          { text: "Cart", to: "/" },
-          { text: "Checkout", to: "/" },
-          { text: "My account", to: "/" },
-          { text: "Wishlist", to: "/" },
-          { text: "Order tracking", to: "/" },
-        ] },
-      { text: "Wishlist", to: "/", sublinksList: [
-          { text: "Cart", to: "/" },
-          { text: "Checkout", to: "/" },
-          { text: "My account", to: "/" },
-          { text: "Wishlist", to: "/" },
-          { text: "Order tracking", to: "/" },
-        ] },
-      { text: "Order tracking", to: "/", sublinksList: [
-          { text: "Cart", to: "/" },
-          { text: "Checkout", to: "/" },
-          { text: "My account", to: "/" },
-          { text: "Wishlist", to: "/" },
-          { text: "Order tracking", to: "/" },
-        ] },
-    ] },
-];
+<script setup>
+import DropDownArrowIcon from "@/shared/assets/icons/DropDownArrowIcon.vue";
+
+defineProps({
+  isTransparent: Boolean,
+  isAbsolute: Boolean,
+  id: String
+})
+
+const isOpen = defineModel()
+const toggleDropdown = () => {
+  isOpen.value = !isOpen.value
+}
+
+const handleBlur = () => {
+  isOpen.value = false
+}
 </script>
 
 <style lang="scss">
-@import "BaseDropDown";
+@import 'BaseDropDown.scss';
 </style>

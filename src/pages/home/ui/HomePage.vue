@@ -99,5 +99,5 @@
   </p>
 </template>
 <script setup lang="ts">
-import BaseDropDown from "@/shared/ui/base/dropdown/BaseDropDown.vue";
+import BaseDropDown from "@/shared/ui/base/sssssdropdown/BaseDropDown.vue";
 </script>
