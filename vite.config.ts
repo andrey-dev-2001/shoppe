@@ -1,9 +1,7 @@
-/// <reference types='vitest' />
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import path from "path";
-import {projectRootDir} from "@nx/workspace";
 import {appRootPath} from "nx/src/utils/app-root";
 
 export default defineConfig({
