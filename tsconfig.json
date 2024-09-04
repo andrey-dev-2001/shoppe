@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "rootDir": ".",
+    "rootDir": "src",
     "sourceMap": true,
-    "declaration": false,
+    "declaration": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2015",
+    "target": "es2018",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": ["es2021", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -24,7 +24,7 @@
     "resolveJsonModule": true
   },
   "files": [],
-  "include": [],
+  "include": ["src/**/*.ts", "src/**/*.vue"],
   "references": [
     {
       "path": "./tsconfig.app.json"
