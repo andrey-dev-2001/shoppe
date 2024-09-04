@@ -1,0 +1,130 @@
+@import "@/shared/assets/scss/mixins";
+@import "@/shared/assets/scss/variables";
+
+.page__title{
+  color: $black;
+  text-align: center;
+  font-size: clamp(20px, 4vw, 33px);
+
+  @include media-breakpoint-up(xs){
+    font-weight: 500;
+    line-height: 43px;
+  }
+
+  @include media-breakpoint-down(xs){
+    font-weight: 400;
+    line-height: 26px;
+  }
+}
+
+.page__title-description{
+  font-weight: 400;
+  font-size: clamp(12px, 2vw, 20px);
+  color: $black;
+
+  @include media-breakpoint-up(xs){
+    line-height: 26px;
+  }
+
+  @include media-breakpoint-down(xs){
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  @include media-breakpoint-up(xxs){
+    text-align: center;
+  }
+}
+
+.contact-us{
+  @include media-breakpoint-up(sm){
+    padding-top: 125px;
+    padding-bottom: 250px;
+  }
+
+  @include media-breakpoint-down(sm){
+    padding-top: 77px;
+    padding-bottom: 96px;
+  }
+
+  &__title{
+    @include media-breakpoint-down(xxs){
+      text-align: start;
+    }
+  }
+
+  &__title-description{
+    max-width: 561px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include media-breakpoint-up(sm){
+      margin-top: 39px;
+    }
+
+    @include media-breakpoint-down(sm){
+      margin-top: 16px;
+    }
+  }
+
+  &__form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-inputs{
+      max-width: 908px;
+      width: 100%;
+      display: grid;
+
+      @include media-breakpoint-up(sm){
+        margin-top: 108px;
+        grid-template-columns: repeat(2, minmax(100px, 396px));
+        justify-content: space-between;
+        column-gap: 50px;
+        row-gap: 94px;
+      }
+
+      @include media-breakpoint-down(sm){
+        margin-top: 62px;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 47px;
+        max-width: 500px;
+      }
+    }
+
+  }
+
+  &__message{
+    @include media-breakpoint-up(sm){
+      grid-column-start: 1;
+      grid-column-end: span 2;
+    }
+  }
+
+  &__submit{
+    background: $black;
+    color: $white;
+    max-width: 500px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+
+    @include media-breakpoint-up(sm){
+      margin-top: 96px;
+      padding: 16px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 21px;
+    }
+
+    @include media-breakpoint-down(sm){
+      margin-top: 24px;
+      padding: 6px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+}

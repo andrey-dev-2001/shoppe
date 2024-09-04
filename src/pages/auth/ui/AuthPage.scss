@@ -1,0 +1,22 @@
+@import "@/shared/assets/scss/variables";
+
+.auth-page{
+  padding-top: 128px;
+  padding-bottom: 250px;
+
+  .container{
+    max-width: 500px;
+  }
+
+  &__title{
+    font-weight: 500;
+    font-size: 33px;
+    line-height: 43px;
+    color: $black;
+    text-align: center;
+  }
+
+  &__tabs{
+    margin-top: 64px;
+  }
+}

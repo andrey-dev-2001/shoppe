@@ -1,16 +1,35 @@
 @import "@/shared/assets/scss/mixins";
 @import "@/shared/assets/scss/variables";
 
-.base-input{
+.base-input {
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
+  padding-bottom: 8px;
   color: $dark-gray;
   border: 0;
   outline: none;
   flex: 100%;
 
-  &:focus, &:active{
+  &:focus,
+  &:active {
     color: $black;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px $white inset !important;
+    color: $dark-gray;
+  }
+
+  &:-webkit-autofill{
+    -webkit-text-fill-color: $dark-gray !important;
+
+    &:focus,
+    &:active {
+      -webkit-text-fill-color: $black !important;
+    }
   }
 }

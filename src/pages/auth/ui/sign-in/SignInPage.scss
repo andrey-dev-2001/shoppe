@@ -1,0 +1,34 @@
+@import "@/shared/assets/scss/variables";
+
+.sign-in{
+  display: flex;
+  flex-direction: column;
+
+  &__username{
+    margin-top: 126px;
+  }
+
+  &__password{
+    margin-top: 46px;
+  }
+
+  &__remember{
+    margin-top: 15px;
+  }
+
+  &__submit{
+    margin-top: 69px;
+    background: $black;
+    padding: 16px;
+    color: $white;
+    border-radius: 4px;
+  }
+
+  &__forgot-password{
+    margin-top: 13px;
+    color: $black;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

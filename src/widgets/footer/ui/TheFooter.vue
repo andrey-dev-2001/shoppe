@@ -25,7 +25,7 @@
             © {{ new Date().getFullYear() }} Shelly.
             <BaseButton class="footer__copyright-link" tag="RouterLink" to="terms">Terms of use</BaseButton>
             and
-            <BaseButton class="footer__copyright-link" tag="RouterLink" to="privacy">privacy policy</BaseButton>.
+            <BaseButton class="footer__copyright-link" tag="RouterLink" to="privacy-policy">privacy policy</BaseButton>.
           </div>
 
           <div class="footer__social-links">
@@ -45,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-import {BaseButton, BaseIcon, FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon} from "@/shared";
+import {BaseButton, FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon} from "@/shared";
 import FormSubscribe from "@/shared/ui/form/subscribe/FormSubscribe.vue";
 
 const footerLinks = [

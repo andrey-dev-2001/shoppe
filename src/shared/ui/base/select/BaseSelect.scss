@@ -1,6 +1,14 @@
 @import "@/shared/assets/scss/mixins";
 @import "@/shared/assets/scss/variables";
 
-.base-select{
+.select{
+  outline: none;
 
+  .dropdown__selected-option{
+    padding-bottom: 8px;
+  }
+
+  &-triger{
+    height: 12px;
+  }
 }
