@@ -3,7 +3,6 @@ import vue from '@vitejs/plugin-vue';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import path from "path";
 import {appRootPath} from "nx/src/utils/app-root";
-import visualizer from "rollup-plugin-visualizer";
 
 export default defineConfig({
   root: __dirname,
@@ -19,13 +18,7 @@ export default defineConfig({
     host: 'localhost',
   },
 
-  plugins: [vue(), nxViteTsPaths(),
-    visualizer({
-      filename: 'stats.html',
-      open: true,
-      gzipSize: true,
-      brotliSize: true
-    })],
+  plugins: [vue(), nxViteTsPaths()],
 
   // Uncomment this if you are using workers.
   // worker: {
