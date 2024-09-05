@@ -134,7 +134,7 @@ function closeMenu() {
 }
 
 const navLinks: NavLink[] = [
-  { text: "Shop", to: "shop" },
+  { text: "Shop", to: { name: "shop"} },
   { text: "Blog", to: "blog" },
   { text: "Our Story", to: "/our-story" },
 ];
@@ -147,7 +147,7 @@ const navButtons: NavButton[] = [
 
 const burgerMenuLinks: BurgerMenuLinks[] = [
   { text: "Home", to: "/" },
-  { text: "Shop", to: "/shop" },
+  { text: "Shop", to: "shop" },
   { text: "About", to: "/about" },
   { text: "Blog", to: "/blog" },
   { text: "Help", to: "/help" },

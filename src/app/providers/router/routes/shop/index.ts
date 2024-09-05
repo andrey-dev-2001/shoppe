@@ -2,7 +2,7 @@ import type { RouteRecordRaw } from 'vue-router'
 
 import { route as productRoute} from './product'
 
-export const routeName = 'CatalogPage'
+export const routeName = 'shop'
 
 export const route: RouteRecordRaw = {
     name: routeName,

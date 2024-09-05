@@ -12,6 +12,7 @@
   "private": true,
   "dependencies": {
     "@vee-validate/yup": "^4.13.2",
+    "swiper": "^11.1.12",
     "vee-validate": "^4.13.2",
     "vite-plugin-checker": "^0.7.2",
     "vue": "^3.3.4",
