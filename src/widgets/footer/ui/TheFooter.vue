@@ -29,14 +29,18 @@
           </div>
 
           <div class="footer__social-links">
-            <BaseButton
-                v-for="(link, index) in socialLinks"
-                :key="index"
-                class="footer__social-link"
-                tag="a"
-                :href="link.href"
-                :icon="link.icon"
-            />
+            <p class="footer__social-links-title">Follow us</p>
+
+            <div class="footer__social-links-list">
+              <BaseButton
+                  v-for="(link, index) in socialLinks"
+                  :key="index"
+                  class="footer__social-link"
+                  tag="a"
+                  :href="link.href"
+                  :icon="link.icon"
+              />
+            </div>
           </div>
         </div>
       </div>

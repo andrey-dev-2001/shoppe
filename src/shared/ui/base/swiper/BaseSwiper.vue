@@ -1,22 +1,32 @@
 <template>
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide" v-for="(slide, index) in slides" :key="index">
-        <slot :slide="slide"></slot>
-      </div>
-    </div>
-    <!-- Додаємо навігацію і пагінацію, якщо потрібно -->
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
+  <Swiper
+      :modules="modules"
+      :slides-per-view="3"
+      :space-between="50"
+      navigation
+      :pagination="{ clickable: true }"
+      :scrollbar="{ draggable: true }"
+      @swiper="onSwiper"
+      @slideChange="onSlideChange"
+  >
+    <SwiperSlide v-for="(slide, index) in slides" :key="index">
+      <slot :slide="slide">
+        <div class="default-slide-content">
+          {{ slide }}
+        </div>
+      </slot>
+    </SwiperSlide>
+  </Swiper>
 </template>
 
 <script setup>
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/swiper-bundle.css';
+import { Navigation, Pagination, Scrollbar, A11y} from 'swiper/modules';
+import {Swiper, SwiperSlide} from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
-// Пропси для компонента
 const props = defineProps({
   slides: {
     type: Array,
@@ -28,27 +38,16 @@ const props = defineProps({
   },
 });
 
-// Ініціалізація Swiper з опціями
-const swiperOptions = reactive({
-  pagination: { el: '.swiper-pagination', clickable: true },
-  navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-  ...props.options, // Об'єднуємо з користувацькими опціями
-});
+const modules = [Navigation, Pagination, Scrollbar, A11y];
+
+const onSwiper = (swiper) => {
+  console.log(swiper);
+};
+
+const onSlideChange = () => {
+  console.log('slide change');
+};
 </script>
 
-<style scoped>
-.swiper-container {
-  width: 100%;
-  height: 100%;
-}
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-  /* Центрування слайдів */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+<style>
 </style>
