@@ -14,7 +14,8 @@ body{
   width: 100vw;
   height: 100%;
   flex-grow: 1;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   @include media-breakpoint-down(sm){
     &.no-scroll{
