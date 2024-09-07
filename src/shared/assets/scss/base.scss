@@ -15,18 +15,20 @@ body{
   overflow-x: hidden;
   flex-grow: 1;
 
-  &::-webkit-scrollbar {
-    width: 8px;
-    background: #F8F8F8;
-  }
+  @media (hover: hover) {
+    &::-webkit-scrollbar {
+      width: 8px;
+      background: #F8F8F8;
+    }
 
-  &::-webkit-scrollbar-thumb {
-    border-radius: 100px;
-    background: #C0A57E;
-  }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 100px;
+      background: #C0A57E;
+    }
 
-  &::-webkit-scrollbar-thumb:hover {
-    background: #B0956D;
+    &::-webkit-scrollbar-thumb:hover {
+      background: #B0956D;
+    }
   }
 
   @include media-breakpoint-down(sm){
@@ -48,7 +50,7 @@ body{
 .container {
   margin: 0 auto;
   padding: 0 16px;
-  max-width: 1248px;
+  max-width: 1280px;
 }
 
 .page{

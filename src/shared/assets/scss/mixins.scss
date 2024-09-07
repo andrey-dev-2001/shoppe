@@ -51,3 +51,10 @@ $breakpoints: (
   text-overflow: ellipsis;
   -webkit-line-clamp: $max-lines;
 }
+
+@mixin price-before() {
+  &:before{
+    content: "$";
+    margin-right: 5px;
+  }
+}
