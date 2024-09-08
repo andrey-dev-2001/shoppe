@@ -1,4 +1,22 @@
-<script setup>
+<template>
+  <form @submit="onSubmit">
+    <BaseField>
+      <template #input>
+        <BaseInput name="email" autocomplete="email" v-model="email" v-bind="emailAttrs" placeholder="Give an email, get the newsletter." />
+      </template>
+
+      <template #button>
+        <BaseButton tag="button" type="submit" @click="hasSubmitted = true" :icon="ArrowIcon" aria-label="Send email address"/>
+      </template>
+
+      <template v-if="hasSubmitted" #error>
+        {{ errors.email }}
+      </template>
+    </BaseField>
+  </form>
+</template>
+
+<script setup lang="ts">
 import { ref } from 'vue';
 import { useForm } from 'vee-validate';
 import * as yup from 'yup';
@@ -21,21 +39,3 @@ const onSubmit = handleSubmit(values => {
 
 const [email, emailAttrs] = defineField('email');
 </script>
-
-<template>
-  <form @submit="onSubmit">
-  <BaseField>
-    <template #input>
-      <BaseInput name="email" autocomplete="email" v-model="email" v-bind="emailAttrs" placeholder="Give an email, get the newsletter." />
-    </template>
-
-    <template #button>
-      <BaseButton tag="button" type="submit" @click="hasSubmitted = true" :icon="ArrowIcon"/>
-    </template>
-
-    <template v-if="hasSubmitted" #error>
-      {{ errors.email }}
-    </template>
-  </BaseField>
-  </form>
-</template>

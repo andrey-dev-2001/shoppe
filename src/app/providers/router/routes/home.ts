@@ -7,7 +7,7 @@ export const route: RouteRecordRaw = {
     path: '/',
     component: () => import('@/pages/home/ui/HomePage.vue'),
     meta: {
-        title: 'Home',
-        headerBorder: false
-    },
+        title: 'Home - Shoppe',
+        metaDescription: 'Shop the latest jewelry trends at Shoppe. From earrings to necklaces, discover our collection of stylish accessories.'
+    }
 }
