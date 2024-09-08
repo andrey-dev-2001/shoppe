@@ -2,9 +2,13 @@
 @import "variables";
 
 html{
-  overflow: hidden;
-  max-width: 100dvw;
-  max-height: 100dvh;
+  max-height: 100vh;
+  height: 100dvh;
+
+  @media (hover: hover) {
+    max-width: 100vw;
+    overflow: hidden;
+  }
 }
 
 body{
