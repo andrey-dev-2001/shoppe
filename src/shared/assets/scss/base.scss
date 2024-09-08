@@ -7,19 +7,21 @@ html{
 
   @media (hover: hover) {
     max-width: 100vw;
-    overflow: hidden;
   }
 }
 
 body{
+  scrollbar-gutter: stable both-edges;
   font-family: 'DM Sans';
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  margin: auto;
   height: 100dvh;
   flex-grow: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
+
+  @media (hover: hover) {
+    max-width: calc(100vw - 8px);
+  }
 
   @include media-breakpoint-down(sm){
     &.no-scroll{
@@ -40,8 +42,10 @@ body{
     }
 
     &::-webkit-scrollbar-thumb {
+      right: 8px;
       border-radius: 100px;
       background: #C0A57E;
+      position: absolute;
     }
 
     &::-webkit-scrollbar-thumb:hover {
@@ -51,10 +55,13 @@ body{
 }
 
 .app{
-  width: 100vw;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+
+  @media (hover: hover) {
+    max-width: calc(100vw - 8px);
+  }
 }
 
 .container {
