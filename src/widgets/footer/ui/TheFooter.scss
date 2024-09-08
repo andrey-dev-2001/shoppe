@@ -8,12 +8,15 @@
     @include media-breakpoint-up(sm) {
       padding-top: 37px;
       padding-bottom: 32px;
-      border-top: 1px solid $light-gray;
     }
 
     @include media-breakpoint-down(sm) {
       padding-top: 17px;
       padding-bottom: 17px;
+    }
+
+    @include media-breakpoint-up(xxs) {
+      border-top: 1px solid $light-gray;
     }
   }
 
@@ -22,23 +25,28 @@
     column-gap: 41px;
     row-gap: 21px;
     flex-wrap: wrap;
+    margin-bottom: 14px;
 
     @include media-breakpoint-down(sm) {
-      row-gap: 8px;
+      justify-content: center;
       margin-top: 40px;
+    }
+
+    @include media-breakpoint-down(xxs) {
+      margin-top: 40px;
+      row-gap: 8px;
       flex-direction: column;
     }
 
     &-link{
       font-weight: 400;
-      color: $dark-gray;
 
-      @include media-breakpoint-up(sm){
+      @include media-breakpoint-up(xs){
         font-size: 16px;
         line-height: 1.69;
       }
 
-      @include media-breakpoint-down(sm){
+      @include media-breakpoint-down(xs){
         font-size: 12px;
         line-height: 1.67;
       }
@@ -48,13 +56,21 @@
   &__subscribe{
     flex: 100%;
     max-width: 396px;
+
+    @include media-breakpoint-down(sm){
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+
   }
 
   &__info{
     display: flex;
-    justify-content: space-between;
 
     @include media-breakpoint-up(sm){
+      justify-content: space-between;
+      align-items: center;
       column-gap: 41px;
     }
 
@@ -68,7 +84,7 @@
     justify-content: space-between;
 
     @include media-breakpoint-up(sm){
-      margin-top: 50px;
+      margin-top: 40px;
     }
 
     @include media-breakpoint-down(sm) {
@@ -81,8 +97,13 @@
     align-items: flex-start;
 
     @include media-breakpoint-down(sm) {
+      justify-content: center;
       margin-top: 32px;
       gap: 8px;
+    }
+
+    @include media-breakpoint-down(xxs) {
+      justify-content: left;
     }
 
     &-title{
@@ -94,7 +115,7 @@
       color: $black;
       gap: 15px;
 
-      @include media-breakpoint-up(sm){
+      @include media-breakpoint-up(xs){
         display: none;
       }
 
@@ -111,7 +132,7 @@
 
     &-list{
       display: flex;
-      gap: 30px;
+      gap: 25px;
 
       @include media-breakpoint-down(sm) {
         gap: 16px;
@@ -123,7 +144,7 @@
     width: 20px;
     height: 20px;
 
-    @include media-breakpoint-down(sm){
+    @include media-breakpoint-down(xs){
       width: 12px;
       height: 12px;
     }
@@ -135,10 +156,18 @@
     line-height: 1.67;
     color: $black;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(sm){
+      margin-left: auto;
+      margin-right: auto;
       margin-top: 36px;
+    }
+
+    @include media-breakpoint-down(xs) {
       font-size: 12px;
-      color: $dark-gray;
+    }
+
+    @include media-breakpoint-down(xxs) {
+      margin-left: 0;
     }
   }
 }

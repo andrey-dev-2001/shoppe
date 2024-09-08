@@ -6,16 +6,16 @@
       :type="props.type"
       :disabled="props.disabled || props.loading"
       :class="classes"
-      class="base-button"
+      class="button"
       @click="onClick"
   >
     <BaseIcon
         v-if="props.loading"
-        icon="icon-loader-2"
-        class="base-button__loading-icon"
+        icon="icon-loader"
+        class="button__loading-icon"
     />
 
-    <BaseIcon v-if="props.icon" :icon="props.icon" class="base-button__icon" />
+    <BaseIcon v-if="props.icon" :icon="props.icon" class="button__icon" />
 
     <slot name="default" />
   </Component>
@@ -27,6 +27,10 @@ import { BaseIcon } from '@/shared'
 import { RouteLocationRaw } from 'vue-router'
 
 interface Props {
+  variant?: 'link' | 'icon' | 'button-border' | 'button-background'
+  color?: 'black' | 'accent' | 'gray' | 'white'
+  size?: '16' | '20'
+  weight?: '700' | '400'
   disabled?: boolean
   loading?: boolean
   tag?: 'button' | 'a' | 'RouterLink'
@@ -38,6 +42,7 @@ interface Props {
   textTransform?: 'none' | 'uppercase'
   justifyContent?: 'center' | 'start' | 'end'
 }
+
 const props = withDefaults(defineProps<Props>(), {
   tag: 'button',
   href: null,
@@ -53,9 +58,14 @@ const emit = defineEmits<{
 }>()
 
 const classes = computed(() => ({
-  [`base-button_text-${props.textTransform}`]: true,
-  [`base-button_justify-content-${props.justifyContent}`]: true,
-  [`base-button_active`]: props.active,
+  [`button__text-${props.textTransform}`]: props.textTransform,
+  [`button__justify-content-${props.justifyContent}`]: props.justifyContent,
+  [`button_active`]: props.active,
+  [`button__variant-${props.variant}`]: props.variant,
+  [`button__color-${props.color}`]: props.color,
+  [`button__size-${props.size}`]: props.size,
+  [`button__weight-${props.weight}`]: props.weight,
+  [`button__loading`]: props.loading,
 }))
 
 function onClick(event: PointerEvent) {

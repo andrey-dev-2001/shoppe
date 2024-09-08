@@ -1,11 +1,5 @@
 <template>
   <main class="home">
-    <div class="container">
-      <div class="home__inner">
-        <!-- Optional content -->
-      </div>
-    </div>
-
     <swiper class="swiper" :modules="modules" :slides-per-view="1" :pagination="{ clickable: true }">
       <swiper-slide v-for="(product, index) in products" :key="index" v-slot="{ isActive }" class="swiper__slide">
         <div class="banner">
@@ -17,7 +11,7 @@
             <p class="banner__price">
               {{ product.price }}
             </p>
-            <BaseButton class="banner__button" :tabindex="isActive ? 0 : -1" tag="RouterLink" :to="{ name: 'product', params: { id: product.id }}">
+            <BaseButton class="banner__button" variant="button-border" color="white" size="16" :tabindex="isActive ? 0 : -1" tag="RouterLink" :to="{ name: 'product', params: { id: product.id }}">
               View Product
             </BaseButton>
           </div>
@@ -29,9 +23,9 @@
       <div class="home__inner">
         <div class="products">
           <div class="products__header">
-            <h1 class="page__section-title">Shop The Latest</h1>
+            <h1 class="products__header-title">Shop The Latest</h1>
 
-            <BaseButton class="products__header-link" tag="RouterLink" :to="{ name: 'shop' }">View All</BaseButton>
+            <BaseButton class="products__header-link" variant="link" color="accent" tag="RouterLink" :to="{ name: 'shop' }">View All</BaseButton>
           </div>
 
           <ProductList :products="products" />

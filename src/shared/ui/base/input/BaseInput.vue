@@ -1,6 +1,6 @@
 <template>
   <input
-      class="base-input"
+      class="input"
       :name="name"
       :type="type"
       v-model="inputValue"

@@ -1,0 +1,23 @@
+@import "@/shared/assets/scss/variables";
+
+.footer__subscribe{
+  &-input{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.69;
+    color: $dark-gray;
+    padding-bottom: 11px;
+  }
+
+  &-submit{
+
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin-bottom: 5px;
+    .base-icon {
+      max-width: 25px;
+      max-height: 30px;
+    }
+  }
+}

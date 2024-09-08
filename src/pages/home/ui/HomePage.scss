@@ -32,7 +32,7 @@
   &__background{
     background: $light-gray;
     object-fit: cover;
-    object-position: 94%;
+    object-position: 94% 2%;
     width: 120%;
     position: absolute;
     top: 0;
@@ -42,7 +42,8 @@
   }
 
   &__inner{
-    width: fit-content;
+    overflow: hidden;
+    width: 100%;
     height: 100%;
   }
 
@@ -51,9 +52,10 @@
     line-height: 1.3;
     color: $white;
 
+    @include single-line-truncate();
+
     @include media-breakpoint-up(sm) {
       font-size: 33px;
-      word-spacing: -4px;
     }
 
     @include media-breakpoint-down(sm) {
@@ -65,6 +67,8 @@
     font-weight: 400;
     line-height: 1.35;
     color: $white;
+
+    @include single-line-truncate();
 
     @include price-before();
 
@@ -81,22 +85,14 @@
   }
 
   &__button{
-    text-transform: capitalize;
-    color: $white;
-
     @include media-breakpoint-up(sm){
       margin-top: 48px;
       padding: 12px 28px;
-      border: 2px solid $white;
       border-radius: 6px;
-      font-weight: 700;
-      font-size: 20px;
-      line-height: 26px;
     }
 
     @include media-breakpoint-down(sm){
       margin-top: 12px;
-      border: 1px solid $white;
       border-radius: 4px;
       padding: 6px 10px;
       font-weight: 400;
@@ -118,8 +114,17 @@
   &__header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    &-title{
+      font-weight: 500;
+      font-size: 33px;
+      line-height: 1.3;
+      color: $black;
+    }
 
     &-link{
+      margin-right: 3px;
       text-transform: capitalize;
       color: $light-accent;
 
@@ -139,7 +144,7 @@
 }
 
 .swiper{
-  margin-top: 5px;
+  margin-top: 8px;
   width: 100%;
 
   .swiper__slide {

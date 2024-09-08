@@ -10,6 +10,8 @@
                 class="footer__nav-link"
                 tag="RouterLink"
                 :to="link.to"
+                variant="link"
+                color="gray"
             >
               {{ link.label }}
             </BaseButton>
@@ -23,9 +25,9 @@
         <div class="footer__social-copy">
           <div class="footer__copyright">
             © {{ new Date().getFullYear() }} Shelly.
-            <BaseButton class="footer__copyright-link" tag="RouterLink" to="terms">Terms of use</BaseButton>
+            <BaseButton class="footer__copyright-link" variant="link" color="gray" tag="RouterLink" to="terms">Terms of use</BaseButton>
             and
-            <BaseButton class="footer__copyright-link" tag="RouterLink" to="privacy-policy">privacy policy</BaseButton>.
+            <BaseButton class="footer__copyright-link" variant="link" color="gray" tag="RouterLink" to="privacy-policy">privacy policy</BaseButton>.
           </div>
 
           <div class="footer__social-links">
@@ -40,6 +42,8 @@
                   :href="link.href"
                   :icon="link.icon"
                   :aria-label="link.ariaLabel"
+                  variant="icon"
+                  color="gray"
               />
             </div>
           </div>
@@ -60,7 +64,7 @@ const footerLinks = [
 ]
 
 const socialLinks = [
-  { href: "https://www.linkedin.com/w", icon: LinkedinIcon, ariaLabel: "Linkedin" },
+  { href: "https://www.linkedin.com/", icon: LinkedinIcon, ariaLabel: "Linkedin" },
   { href: "https://www.facebook.com/", icon: FacebookIcon, ariaLabel: "Facebook" },
   { href: "https://www.instagram.com/", icon: InstagramIcon, ariaLabel: "Instagram" },
   { href: "https://x.com/", icon: TwitterIcon, ariaLabel: "Twitter" },

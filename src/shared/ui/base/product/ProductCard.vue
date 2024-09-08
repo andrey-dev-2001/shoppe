@@ -11,6 +11,9 @@
             tag="button"
             @click="handleAction(button.action)"
             :icon="button.icon"
+            :aria-label="button.ariaLabel"
+            variant="icon"
+            color="gray"
         />
       </ul>
     </div>
@@ -41,15 +44,18 @@ const props = defineProps({
 const buttons = [
   {
     icon: CartIcon,
-    action: 'addToCart'
+    action: 'addToCart',
+    ariaLabel: `Add ${props.productName} to cart`
   },
   {
     icon: ShowIcon,
-    action: 'showProductDetails'
+    action: 'showProductDetails',
+    ariaLabel: `Show ${props.productName} details`
   },
   {
     icon: WishIcon,
-    action: 'addToWishList'
+    action: 'addToWishList',
+    ariaLabel: `Add ${props.productName} to wish list`
   }
 ];
 

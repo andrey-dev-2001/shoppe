@@ -5,8 +5,12 @@
       <slot name="button"/>
 
     </div>
-    <div class="base-field__error">
-      <slot name="error"/>
+    <div class="base-field__footer">
+      <div class="base-field__error">
+        <slot name="error"/>
+      </div>
+
+      <slot name="footer"/>
     </div>
   </div>
 </template>
