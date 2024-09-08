@@ -16,6 +16,7 @@
     height: calc(100% + 2px);
     background: $white;
     transition: background 0.2s ease-in-out;
+    z-index: -1;
   }
 
   @include media-breakpoint-up(sm){

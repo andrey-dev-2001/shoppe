@@ -7,7 +7,7 @@
     </div>
 
     <swiper class="swiper" :modules="modules" :slides-per-view="1" :pagination="{ clickable: true }">
-      <swiper-slide v-for="(product, index) in products" :key="index" class="swiper__slide">
+      <swiper-slide v-for="(product, index) in products" :key="index" v-slot="{ isActive }" class="swiper__slide">
         <div class="banner">
           <img class="banner__background" width="1248" height="646" :loading="{'lazy' : index > 0}" :src="product.image" :alt="product.name">
           <div class="banner__inner">
@@ -17,7 +17,7 @@
             <p class="banner__price">
               {{ product.price }}
             </p>
-            <BaseButton class="banner__button" tag="RouterLink" :to="{ name: 'product', params: { id: product.id }}">
+            <BaseButton class="banner__button" :tabindex="isActive ? 0 : -1" tag="RouterLink" :to="{ name: 'product', params: { id: product.id }}">
               View Product
             </BaseButton>
           </div>
@@ -44,8 +44,8 @@
 <script setup lang="ts">
 import { EffectCube, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from "swiper/vue";
-import 'swiper/css';
-import 'swiper/css/pagination';
+import 'swiper/less';
+import 'swiper/less/pagination';
 import { BaseButton } from "@/shared";
 import ProductList from "@/shared/ui/base/product-list/ProductList.vue";
 
