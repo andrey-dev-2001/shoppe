@@ -39,6 +39,7 @@
                   tag="a"
                   :href="link.href"
                   :icon="link.icon"
+                  :aria-label="link.ariaLabel"
               />
             </div>
           </div>
@@ -59,10 +60,10 @@ const footerLinks = [
 ]
 
 const socialLinks = [
-  { href: "https://www.linkedin.com/w", icon: LinkedinIcon },
-  { href: "https://www.facebook.com/", icon: FacebookIcon },
-  { href: "https://www.instagram.com/", icon: InstagramIcon },
-  { href: "https://x.com/", icon: TwitterIcon },
+  { href: "https://www.linkedin.com/w", icon: LinkedinIcon, ariaLabel: "Linkedin" },
+  { href: "https://www.facebook.com/", icon: FacebookIcon, ariaLabel: "Facebook" },
+  { href: "https://www.instagram.com/", icon: InstagramIcon, ariaLabel: "Instagram" },
+  { href: "https://x.com/", icon: TwitterIcon, ariaLabel: "Twitter" },
 ]
 </script>
 

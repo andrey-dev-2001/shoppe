@@ -56,31 +56,31 @@ const bannerProducts = []
 const products = [
   {
     id: 1,
-    image: new URL('@/shared/assets/img/img.jpg', import.meta.url),
+    image: new URL('@/shared/assets/img/img.webp', import.meta.url),
     name: "Gold big hoops",
     price: "68,00"
   },
   {
     id: 1,
-    image: new URL('@/shared/assets/img/img.jpg', import.meta.url),
+    image: new URL('@/shared/assets/img/img.webp', import.meta.url),
     name: "Gold big hoops",
     price: "20,00"
   },
   {
     id: 1,
-    image: new URL('@/shared/assets/img/img.jpg', import.meta.url),
+    image: new URL('@/shared/assets/img/img.webp', import.meta.url),
     name: "Gold big hoops",
     price: "20,00"
   },
   {
     id: 2,
-    image: new URL('@/shared/assets/img/img.jpg', import.meta.url),
+    image: new URL('@/shared/assets/img/img.webp', import.meta.url),
     name: "Sophia Necklace",
     price: "35,00"
   },
   {
     id: 3,
-    image: new URL('@/shared/assets/img/img.jpg', import.meta.url),
+    image: new URL('@/shared/assets/img/img.webp', import.meta.url),
     name: "Luna Bracelet",
     price: "15,00"
   }
