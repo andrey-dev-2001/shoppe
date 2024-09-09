@@ -2,7 +2,8 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 import path from "path";
-import {appRootPath} from "nx/src/utils/app-root";
+import { appRootPath } from "nx/src/utils/app-root";
+import { visualizer } from 'rollup-plugin-visualizer';
 
 export default defineConfig({
   root: __dirname,
@@ -18,12 +19,16 @@ export default defineConfig({
     host: 'localhost',
   },
 
-  plugins: [vue(), nxViteTsPaths()],
-
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [ nxViteTsPaths() ],
-  // },
+  plugins: [
+    vue(),
+    nxViteTsPaths(),
+    visualizer({
+      filename: './dist/report.html', // Path to save the report
+      open: true,  // Automatically opens the report in the browser
+      gzipSize: true,  // Include gzip size in the report
+      brotliSize: true // Include brotli size in the report
+    })
+  ],
 
   resolve: {
     alias: {
