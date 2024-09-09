@@ -15,11 +15,11 @@ body{
   font-family: 'DM Sans';
   display: flex;
   flex-direction: column;
-  margin: auto;
   height: 100dvh;
   flex-grow: 1;
 
   @media (hover: hover) {
+    width: calc(100vw - 8px);
     max-width: calc(100vw - 8px);
   }
 
@@ -60,6 +60,8 @@ body{
   flex-grow: 1;
 
   @media (hover: hover) {
+    margin: auto;
+    width: calc(100vw - 8px);
     max-width: calc(100vw - 8px);
   }
 }

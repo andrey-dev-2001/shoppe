@@ -1,7 +1,21 @@
 <template>
   <TheHeader />
-  <router-view class="page" />
-  <TheFooter />
+      <RouterView v-slot="{ Component }">
+        <template v-if="Component">
+              <Suspense timeout="0">
+                <template #default>
+                  <div>
+                    <component :is="Component"></component>
+                    <TheFooter />
+                  </div>
+                </template>
+
+                <template #fallback>
+                  Loading...
+                </template>
+              </Suspense>
+        </template>
+      </RouterView>
 </template>
 
 <script setup lang="ts">
