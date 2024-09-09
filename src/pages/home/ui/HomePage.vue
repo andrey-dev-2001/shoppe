@@ -3,7 +3,7 @@
     <swiper class="swiper" :modules="modules" :slides-per-view="1" :pagination="{ clickable: true }">
       <swiper-slide v-for="(product, index) in products" :key="index" v-slot="{ isActive }" class="swiper__slide">
         <div class="banner">
-          <img class="banner__background" width="1248" height="646" :loading="{'lazy' : index > 0}" :src="product.image" :alt="product.name">
+          <img class="banner__background" rel="preload" width="1248" height="646" :src="product.image" :alt="product.name">
           <div class="banner__inner">
             <p class="banner__title">
               {{ product.name }}
