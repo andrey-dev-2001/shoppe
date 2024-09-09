@@ -1,5 +1,4 @@
 import '@/shared/assets/scss/index.scss';
-
 import { router } from '@/app/providers'
 import { createApp } from 'vue';
 import App from './app/App.vue';
