@@ -40,8 +40,10 @@ import { EffectCube, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from "swiper/vue";
 import 'swiper/less';
 import 'swiper/less/pagination';
-import { BaseButton } from "@/shared";
-import ProductList from "@/shared/ui/base/product-list/ProductList.vue";
+
+const BaseButton = defineAsyncComponent(() => import('@/shared/ui/base/button/BaseButton.vue'))
+const ProductList = defineAsyncComponent(() => import("@/shared/ui/base/product-list/ProductList.vue"))
+import {defineAsyncComponent} from "vue";
 
 const modules = [EffectCube, Pagination]
 
