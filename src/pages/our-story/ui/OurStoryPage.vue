@@ -18,7 +18,16 @@
           Top trends
         </h2>
 
-        <BaseImage class="our-story__picture" v-bind="img"/>
+        <BaseImage
+            class="our-story__picture"
+            :src="img.src.toString()"
+            :mobile-src="img.mobileSrc.toString()"
+            :alt="img.alt"
+            :width="img.width"
+            :height="img.height"
+            :mobile-width="img.mobileWidth"
+            :mobile-height="img.mobileHeight"
+        />
 
         <p class="page__description">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis consequat sed eu felis.
@@ -38,7 +47,16 @@
           Produced with care
         </h2>
 
-        <BaseImage class="our-story__picture" v-bind="img2"/>
+        <BaseImage
+            class="our-story__picture"
+            :src="img2.src.toString()"
+            :mobile-src="img2.mobileSrc.toString()"
+            :alt="img2.alt"
+            :width="img2.width"
+            :height="img2.height"
+            :mobile-width="img2.mobileWidth"
+            :mobile-height="img2.mobileHeight"
+        />
 
         <p class="page__description">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam placerat, augue a volutpat hendrerit, sapien tortor faucibus augue, a maximus elit ex vitae libero. Sed quis mauris eget arcu facilisis consequat sed eu felis. Nunc sed porta augue. Morbi porta tempor odio, in molestie diam bibendu.
@@ -52,8 +70,8 @@
 import {BaseImage} from "@/shared";
 
 const img = {
-  src: new URL('@/shared/assets/img/our-story/img-1.webp', import.meta.url).toString(),
-  mobileSrc: new URL('@/shared/assets/img/our-story/img-1-mobile.webp', import.meta.url).toString(),
+  src: new URL('@/shared/assets/img/our-story/img-1.webp', import.meta.url),
+  mobileSrc: new URL('@/shared/assets/img/our-story/img-1-mobile.webp', import.meta.url),
   alt: "Close-up of a woman wearing a luxury watch",
   width: 670,
   height: 300,
@@ -62,8 +80,8 @@ const img = {
 };
 
 const img2 = {
-  src: new URL('@/shared/assets/img/our-story/img-2.webp', import.meta.url).toString(),
-  mobileSrc: new URL('@/shared/assets/img/our-story/img-2-mobile.webp', import.meta.url).toString(),
+  src: new URL('@/shared/assets/img/our-story/img-2.webp', import.meta.url),
+  mobileSrc: new URL('@/shared/assets/img/our-story/img-2-mobile.webp', import.meta.url),
   alt: "Close-up of a woman wearing a luxury watch",
   width: 670,
   height: 300,
