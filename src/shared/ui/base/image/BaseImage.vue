@@ -8,8 +8,8 @@
 
 <script setup lang="ts">
 interface ImageConfig {
-  src: URL;
-  mobileSrc?: URL;
+  src: string;
+  mobileSrc?: string;
   alt: string;
   width: string | number;
   height: string | number;
