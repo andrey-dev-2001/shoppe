@@ -20,8 +20,8 @@
 
         <BaseImage
             class="our-story__picture"
-            :src="img.src.toString()"
-            :mobile-src="img.mobileSrc.toString()"
+            :src="img.src"
+            :mobile-src="img.mobileSrc"
             :alt="img.alt"
             :width="img.width"
             :height="img.height"
@@ -49,8 +49,8 @@
 
         <BaseImage
             class="our-story__picture"
-            :src="img2.src.toString()"
-            :mobile-src="img2.mobileSrc.toString()"
+            :src="img2.src"
+            :mobile-src="img2.mobileSrc"
             :alt="img2.alt"
             :width="img2.width"
             :height="img2.height"
