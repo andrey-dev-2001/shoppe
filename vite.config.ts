@@ -8,7 +8,6 @@ import { visualizer } from 'rollup-plugin-visualizer';
 export default defineConfig({
   root: __dirname,
   cacheDir: './node_modules/.vite/shoppe',
-  base: '/',
 
   server: {
     port: 4200,

@@ -20,13 +20,7 @@
 
         <BaseImage
             class="our-story__picture"
-            :src="img.src"
-            :mobile-src="img.mobileSrc"
-            :alt="img.alt"
-            :width="img.width"
-            :height="img.height"
-            :mobile-width="img.mobileWidth"
-            :mobile-height="img.mobileHeight"
+            v-bind="img"
         />
 
         <p class="page__description">
@@ -49,13 +43,7 @@
 
         <BaseImage
             class="our-story__picture"
-            :src="img2.src"
-            :mobile-src="img2.mobileSrc"
-            :alt="img2.alt"
-            :width="img2.width"
-            :height="img2.height"
-            :mobile-width="img2.mobileWidth"
-            :mobile-height="img2.mobileHeight"
+            v-bind="img2"
         />
 
         <p class="page__description">
