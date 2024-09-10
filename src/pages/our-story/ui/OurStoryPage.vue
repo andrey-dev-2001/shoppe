@@ -58,8 +58,8 @@
 import {BaseImage} from "@/shared";
 
 const img = {
-  src: new URL('@/shared/assets/img/our-story/img-1.webp', import.meta.url),
-  mobileSrc: new URL('@/shared/assets/img/our-story/img-1-mobile.webp', import.meta.url),
+  src: new URL('@/shared/assets/img/our-story/img-1.webp', import.meta.url).toString(),
+  mobileSrc: new URL('@/shared/assets/img/our-story/img-1-mobile.webp', import.meta.url).toString(),
   alt: "Close-up of a woman wearing a luxury watch",
   width: 670,
   height: 300,
@@ -68,9 +68,9 @@ const img = {
 };
 
 const img2 = {
-  src: new URL('@/shared/assets/img/our-story/img-2.webp', import.meta.url),
-  mobileSrc: new URL('@/shared/assets/img/our-story/img-2-mobile.webp', import.meta.url),
-  alt: "Close-up of a woman wearing a luxury watch",
+  src: new URL('@/shared/assets/img/our-story/img-2.webp', import.meta.url).toString(),
+  mobileSrc: new URL('@/shared/assets/img/our-story/img-2-mobile.webp', import.meta.url).toString(),
+  alt: "Close-up of a different watch product",
   width: 670,
   height: 300,
   mobileWidth: 288,
