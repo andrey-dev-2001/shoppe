@@ -8,6 +8,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 export default defineConfig({
   root: __dirname,
   cacheDir: './node_modules/.vite/shoppe',
+  base: '/',
 
   server: {
     port: 4200,
@@ -23,10 +24,10 @@ export default defineConfig({
     vue(),
     nxViteTsPaths(),
     visualizer({
-      filename: './dist/report.html', // Path to save the report
-      open: true,  // Automatically opens the report in the browser
-      gzipSize: true,  // Include gzip size in the report
-      brotliSize: true // Include brotli size in the report
+      filename: './dist/report.html',
+      open: true,
+      gzipSize: true,
+      brotliSize: true
     })
   ],
 

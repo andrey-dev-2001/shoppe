@@ -12,26 +12,35 @@ import {router} from "@/app/providers";
 const route = useRoute();
 
 router.beforeEach((to, from, next) => {
-  const metaTitle = to.meta.title;
-  const metaDescription = to.meta.metaDescription;
+  const defaultTitle = 'Shoppe'
+  document.title = to.meta.title || defaultTitle
 
-  if (metaTitle) {
-    document.title = metaTitle;
-  }
+  const metaTags = [
+    { name: 'description', content: to.meta.description },
+    { name: 'keywords', content: to.meta.keywords },
+    { property: 'og:title', content: to.meta.ogTitle },
+    { property: 'og:description', content: to.meta.ogDescription },
+    { property: 'og:image', content: to.meta.ogImage },
+    { property: 'twitter:card', content: to.meta.twitterCard },
+    { property: 'twitter:title', content: to.meta.twitterTitle },
+    { property: 'twitter:description', content: to.meta.twitterDescription },
+    { property: 'twitter:image', content: to.meta.twitterImage },
+  ]
 
-  if (metaDescription) {
-    const descriptionTag = document.querySelector('meta[name="description"]');
-    if (descriptionTag) {
-      descriptionTag.setAttribute('content', metaDescription);
+  metaTags.forEach(tag => {
+    const existingTag = document.querySelector(`meta[name="${tag.name}"], meta[property="${tag.property}"]`)
+    if (existingTag) {
+      existingTag.setAttribute('content', tag.content || '')
     } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = metaDescription;
-      document.head.appendChild(meta);
+      const meta = document.createElement('meta')
+      if (tag.name) meta.setAttribute('name', tag.name)
+      if (tag.property) meta.setAttribute('property', tag.property)
+      meta.setAttribute('content', tag.content || '')
+      document.head.appendChild(meta)
     }
-  }
+  })
 
-  next();
-});
+  next()
+})
 
 </script>

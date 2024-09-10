@@ -1,0 +1,95 @@
+@import "@/shared/assets/scss/variables";
+@import "@/shared/assets/scss/mixins";
+
+.our-story{
+  .container{
+    max-width: 702px;
+  }
+
+  &__inner{
+    @include media-breakpoint-up(sm){
+      padding-top: 125px;
+      padding-bottom: 250px;
+    }
+
+    @include media-breakpoint-down(sm){
+      padding-top: 77px;
+      padding-bottom: 96px;
+    }
+  }
+
+  &__picture{
+    .image{
+      overflow: hidden;
+      border-radius: 8px;
+    }
+  }
+
+  .page__section-title{
+    margin-top: 48px;
+
+    @include media-breakpoint-up(sm){
+      margin-top: 48px;
+    }
+
+    @include media-breakpoint-down(sm){
+      margin-top: 22px;
+    }
+  }
+
+  .image {
+    @include media-breakpoint-up(sm){
+      margin-top: 28px;
+    }
+
+    @include media-breakpoint-down(sm){
+      margin-top: 13px;
+    }
+  }
+
+  .page__title-description{
+    @include media-breakpoint-up(sm){
+      margin-top: 24px;
+    }
+
+    @include media-breakpoint-down(sm){
+      margin-left: 0;
+      margin-top: 16px;
+    }
+  }
+
+  .page__title-description + .page__description{
+    @include media-breakpoint-up(sm){
+      margin-top: 46px;
+    }
+
+    @include media-breakpoint-down(sm){
+      margin-top: 16px;
+    }
+  }
+
+  .page__description + .page__list{
+    display: block;
+    margin-top: 16px;
+
+    .page__list-item{
+      &:before{
+        margin-right: 1px;
+      }
+    }
+  }
+
+  .page__list + .page__section-title{
+    margin-top: 62px;
+  }
+
+  &__picture + .page__description {
+    @include media-breakpoint-up(sm){
+      margin-top: 48px;
+    }
+
+    @include media-breakpoint-down(sm){
+      margin-top: 16px;
+    }
+  }
+}
