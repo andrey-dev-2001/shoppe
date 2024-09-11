@@ -9,5 +9,13 @@ export const route: RouteRecordRaw = {
     component: DownloadsPage,
     meta: {
         title: 'Downloads - Shoppe',
-    },
+        description: 'Access your digital downloads from your Shoppe account. Easily download purchased files or browse available products.',
+        keywords: 'downloads, digital products, account downloads, Shoppe downloads, file downloads, product downloads',
+        ogTitle: 'Shoppe - Downloads',
+        ogDescription: 'Manage and download your digital purchases from Shoppe. View available downloads or browse our product catalog.',
+        twitterCard: 'summary_large_image',
+        twitterTitle: 'Shoppe – Downloads',
+        twitterDescription: 'View and download your purchased digital products from Shoppe. Stay organized and get easy access to your files.',
+    }
+
 }
