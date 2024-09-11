@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import { EffectCube, Pagination } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from "swiper/vue";
 import 'swiper/less';
 import 'swiper/less/pagination';
@@ -44,7 +44,7 @@ import 'swiper/less/pagination';
 import BaseButton from '@/shared/ui/base/button/BaseButton.vue'
 import ProductList from "@/shared/ui/base/product-list/ProductList.vue"
 
-const modules = [EffectCube, Pagination]
+const modules = [Pagination]
 
 const bannerProducts = []
 

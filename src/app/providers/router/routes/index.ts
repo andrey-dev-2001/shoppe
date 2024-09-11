@@ -9,6 +9,7 @@ import { route as authRoute } from './auth'
 import { route as contactUsRoute } from './contact-us'
 import { route as forgotPasswordRoute } from './forgotPassword'
 import { route as privacyPolicyRoute } from './privacy-policy'
+import { route as accountRoute } from './account'
 
 const rawRoutes: RouteRecordRaw[] = [
   homeRoute,
@@ -21,6 +22,7 @@ const rawRoutes: RouteRecordRaw[] = [
   contactUsRoute,
   forgotPasswordRoute,
   privacyPolicyRoute,
+  accountRoute
 ]
 
 const routes: RouteRecordRaw[] = rawRoutes.map((route) => ({

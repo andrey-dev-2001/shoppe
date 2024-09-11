@@ -17,8 +17,34 @@
 
   &__variant-button-background {
     border-radius: 4px;
-    border: 1px solid $black;
-    background: $black;
+    padding: 16px;
+
+    &.button__color-white {
+      border: 1px solid $black;
+      background: $black;
+
+      @media (hover: hover) {
+        &:hover, &:focus {
+          background: $white;
+          color: $black;
+          outline: $black;
+          border: 1px solid $black;
+        }
+      }
+    }
+
+    &:not(.button__color-black) {
+      border-color: $white;
+      color: $white;
+
+      @media (hover: hover) {
+        &:hover, &:focus {
+          background: $white;
+          color: $black;
+          outline: $white;
+        }
+      }
+    }
 
     &:hover {
       background: none;

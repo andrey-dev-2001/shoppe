@@ -1,0 +1,58 @@
+@import "@/shared/assets/scss/variables";
+@import "@/shared/assets/scss/mixins";
+
+.downloads{
+  &__inner{
+    padding-top: 40px;
+  }
+
+  &__nothing{
+    border-top: 2px solid $light-accent;
+    background: $light-gray-low;
+    display: flex;
+
+    @include media-breakpoint-up(xs){
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+    }
+
+    @include media-breakpoint-down(xs){
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 16px;
+      gap: 8px;
+    }
+
+    &-text{
+      font-weight: 400;
+      color: $black;
+
+      @include media-breakpoint-up(sm){
+        font-size: 16px;
+        line-height: 1.69;
+      }
+
+      @include media-breakpoint-down(sm){
+        font-size: 12px;
+        line-height: 1.67;
+      }
+    }
+
+    &-button{
+      color: $light-accent;
+
+      @include media-breakpoint-up(sm){
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 21px;
+      }
+
+      @include media-breakpoint-down(sm){
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.67;
+      }
+    }
+  }
+}

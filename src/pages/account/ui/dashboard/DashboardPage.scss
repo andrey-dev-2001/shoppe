@@ -1,0 +1,30 @@
+@import "@/shared/assets/scss/variables";
+@import "@/shared/assets/scss/mixins";
+
+.dashboard{
+  padding-top: 40px;
+
+  &__description{
+    font-weight: 400;
+    color: $black;
+    display: block;
+
+    .button{
+      display: inline;
+    }
+
+    @include media-breakpoint-up(sm){
+      font-size: 16px;
+      line-height: 1.69;
+    }
+
+    @include media-breakpoint-down(sm){
+      font-size: 12px;
+      line-height: 1.67;
+    }
+
+    + .dashboard__description {
+      margin-top: 10px;
+    }
+  }
+}

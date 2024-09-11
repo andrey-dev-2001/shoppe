@@ -1,0 +1,8 @@
+@import  "@/shared/assets/scss/variables";
+@import  "@/shared/assets/scss/mixins";
+
+.addresses{
+  &__forms{
+    display: flex;
+  }
+}
