@@ -17,5 +17,4 @@ export const route: RouteRecordRaw = {
         twitterTitle: 'Shoppe – Downloads',
         twitterDescription: 'View and download your purchased digital products from Shoppe. Stay organized and get easy access to your files.',
     }
-
 }

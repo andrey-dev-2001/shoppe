@@ -72,7 +72,7 @@
             </BaseField>
           </div>
 
-          <BaseButton tag="button" variant="button-background" color="white" class="details__submit" type="submit">Save changes</BaseButton>
+          <BaseButton tag="button" variant="button-background" color="white" class="details__submit" type="submit" @click="hasSubmitted = true;">Save changes</BaseButton>
         </form>
       </div>
     </div>
@@ -90,7 +90,6 @@ import {BaseButton} from "@/shared";
 
 const hasSubmitted = ref(false);
 
-// Схема валидации с Yup
 const schema = yup.object({
   firstName: yup
       .string()
@@ -130,14 +129,11 @@ const [lastName, lastNameAttrs] = defineField('lastName');
 const [displayName, displayNameAttrs] = defineField('displayName');
 const [email, emailAttrs] = defineField('email');
 
-// Поля для паролей
 const currentPassword = ref('');
 const newPassword = ref('');
 const confirmPassword = ref('');
 
-// Логика отправки формы
 const onSubmit = handleSubmit(values => {
-  hasSubmitted.value = true;
   console.log(values);
 });
 </script>

@@ -5,6 +5,14 @@
 
   &__inner{
     padding-top: 36px;
+    padding-bottom: 250px;
+
+    @include media-breakpoint-down(sm){
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 96px;
+    }
   }
 
   &__description{
@@ -18,6 +26,60 @@
     margin-top: 45px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    column-gap: 88px;
+
+    @include media-breakpoint-down(md){
+      column-gap: 50px;
+    }
+
+    @include media-breakpoint-down(sm){
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 46px;
+
+    }
+  }
+
+  &__form{
+    margin-top: 24px;
+    display: grid;
+    row-gap: 37px;
+    column-gap: 40px;
+    max-width: 580px;
+
+    @include media-breakpoint-up(sm){
+      grid-template-columns: repeat(2, auto);
+    }
+
+    @include media-breakpoint-down(md){
+      column-gap: 20px;
+    }
+
+    @include media-breakpoint-down(sm){
+      margin-top: 19px;
+      row-gap: 23px;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__first-name{
+    @include media-breakpoint-up(sm){
+      grid-row: 1;
+      grid-column: 1;
+    }
+  }
+
+  &__last-name{
+    @include media-breakpoint-up(sm){
+      grid-row: 1;
+      grid-column: 2;
+    }
+  }
+
+  &__company-name, &__country, &__street-address, &__postcode, &__city, &__phone, &__email{
+    @include media-breakpoint-up(sm){
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
   }
 
   &__title{
@@ -41,5 +103,16 @@
     font-size: 16px;
     line-height: 21px;
     color: $light-accent;
+  }
+
+  &__submit{
+    @include media-breakpoint-up(sm){
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    @include media-breakpoint-up(sm){
+      max-width: 244px;
+    }
   }
 }
