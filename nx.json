@@ -12,14 +12,9 @@
     ],
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
-  "nxCloudAccessToken": "NDU4NzY5MWItOTQ0Ny00NmZlLWIzOWMtNDQwYTc4MjNiN2E1fHJlYWQtd3JpdGU=",
+  "nxCloudAccessToken": "MjU5YjBmNTktNjljYy00NzU5LWFkZmItMjQyNDI3ZTMxMDVifHJlYWQtd3JpdGU=",
   "plugins": [
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    },
+    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
     {
       "plugin": "@nx/vite/plugin",
       "options": {
@@ -30,16 +25,7 @@
         "serveStaticTargetName": "serve-static"
       }
     },
-    {
-      "plugin": "@nx/playwright/plugin",
-      "options": {
-        "targetName": "e2e"
-      }
-    }
+    { "plugin": "@nx/playwright/plugin", "options": { "targetName": "e2e" } }
   ],
-  "targetDefaults": {
-    "e2e-ci--**/*": {
-      "dependsOn": ["^build"]
-    }
-  }
+  "targetDefaults": { "e2e-ci--**/*": { "dependsOn": ["^build"] } }
 }
